@@ -1,0 +1,33 @@
+.
+├── app
+│   ├── app
+│   ├── divisions
+│   │   ├── Door.tsx
+│   │   ├── ExtensionDetails.tsx
+│   │   ├── HomePage.tsx
+│   │   ├── NavigationBar.tsx
+│   │   ├── SetupDetails.tsx
+│   │   ├── ThemeSwitch.tsx
+│   │   ├── echoverse
+│   │   ├── horizon
+│   │   ├── lumina
+│   │   ├── nexus
+│   │   ├── skyforge
+│   │   ├── summit
+│   │   └── vespera
+│   ├── docs
+│   │   ├── Branding_Style_Guide.md
+│   │   ├── Folder_Structure_Route_Groups
+│   │   └── space_visions.md
+│   ├── favicon.ico
+│   ├── fonts
+│   │   ├── GeistMonoVF.woff
+│   │   └── GeistVF.woff
+│   ├── globals.css
+│   ├── layout.js
+│   ├── layout.tsx
+│   ├── page.js
+│   └── page.tsx
+└── tree.txt
+
+12 directories, 18 files

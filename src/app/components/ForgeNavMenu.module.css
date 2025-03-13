@@ -1,0 +1,186 @@
+/* ForgeNavMenu.module.css */
+
+.navContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 50;
+}
+
+/* Anvil Toggle Button */
+.anvilToggle {
+    width: 60px;
+    height: 40px;
+    background: #400066;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(106, 13, 173, 0.7);
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.anvilToggle:hover {
+    transform: scale(1.1);
+}
+
+.anvilActive {
+    transform: scale(1.1);
+    background: #6a0dad;
+    box-shadow: 0 0 20px rgba(255, 0, 144, 0.9);
+}
+
+.anvil {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background: #6a0dad;
+    clip-path: polygon(0% 30%, 30% 0%, 70% 0%, 100% 30%, 80% 100%, 20% 100%);
+}
+
+.anvilGlow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 5px;
+    background: radial-gradient(circle at center, rgba(255, 0, 144, 0.5), transparent 70%);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.anvilToggle:hover .anvilGlow {
+    opacity: 1;
+}
+
+/* Menu Panel */
+.menuPanel {
+    width: 320px;
+    background: rgba(26, 10, 26, 0.9);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 0 20px rgba(106, 13, 173, 0.6);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    animation: menuAppear 0.3s ease;
+    border: 1px solid rgba(255, 0, 144, 0.3);
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+@keyframes menuAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Menu Items */
+.menuItem {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.2s ease;
+    background: rgba(0, 0, 0, 0.3);
+    border-left: 3px solid transparent;
+}
+
+.menuItem:hover {
+    background: rgba(255, 0, 144, 0.2);
+    border-left: 3px solid #ff0090;
+    transform: translateX(5px);
+}
+
+.iconContainer {
+    margin-right: 15px;
+    color: #ff0090;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+}
+
+.textContent {
+    flex: 1;
+}
+
+.textContent h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    margin: 0 0 5px 0;
+    color: white;
+}
+
+.textContent p {
+    font-size: 0.8rem;
+    margin: 0;
+    opacity: 0.7;
+    color: #cccccc;
+}
+
+/* Position variants */
+.navVertical {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.navHorizontal {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.navHorizontal .menuPanel {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: auto;
+    max-width: 1000px;
+}
+
+.navHorizontal .menuItem {
+    width: 200px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .menuPanel {
+        width: 280px;
+    }
+
+    .iconContainer {
+        width: 40px;
+        height: 40px;
+    }
+
+    .textContent h3 {
+        font-size: 0.9rem;
+    }
+
+    .textContent p {
+        font-size: 0.7rem;
+    }
+
+    .navHorizontal .menuPanel {
+        flex-direction: column;
+    }
+
+    .navHorizontal .menuItem {
+        width: 100%;
+    }
+}

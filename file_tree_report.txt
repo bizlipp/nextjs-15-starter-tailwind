@@ -1,0 +1,530 @@
+.
+├── Dockerfile
+├── README.md
+├── eslint.config.mjs
+├── file_tree_report.txt
+├── jsconfig.json
+├── next.config.js
+├── next.config.mjs
+├── node_modules
+│   ├── @alloc
+│   ├── @babel
+│   ├── @emnapi
+│   ├── @eslint
+│   ├── @eslint-community
+│   ├── @humanfs
+│   ├── @humanwhocodes
+│   ├── @img
+│   ├── @next
+│   ├── @nodelib
+│   ├── @nolyfill
+│   ├── @rtsao
+│   ├── @rushstack
+│   ├── @swc
+│   ├── @tailwindcss
+│   ├── @trysound
+│   ├── @types
+│   ├── @typescript-eslint
+│   ├── acorn
+│   ├── acorn-jsx
+│   ├── acorn-node
+│   ├── acorn-walk
+│   ├── ajv
+│   ├── ansi-styles
+│   ├── anymatch
+│   ├── arg
+│   ├── argparse
+│   ├── aria-query
+│   ├── array-buffer-byte-length
+│   ├── array-includes
+│   ├── array.prototype.findlast
+│   ├── array.prototype.findlastindex
+│   ├── array.prototype.flat
+│   ├── array.prototype.flatmap
+│   ├── array.prototype.tosorted
+│   ├── arraybuffer.prototype.slice
+│   ├── ast-types-flow
+│   ├── async-function
+│   ├── autoprefixer
+│   ├── available-typed-arrays
+│   ├── axe-core
+│   ├── axobject-query
+│   ├── balanced-match
+│   ├── binary-extensions
+│   ├── boolbase
+│   ├── brace-expansion
+│   ├── braces
+│   ├── browserslist
+│   ├── busboy
+│   ├── bytes
+│   ├── call-bind
+│   ├── call-bind-apply-helpers
+│   ├── call-bound
+│   ├── callsites
+│   ├── camelcase-css
+│   ├── caniuse-api
+│   ├── caniuse-lite
+│   ├── chalk
+│   ├── chokidar
+│   ├── client-only
+│   ├── color
+│   ├── color-convert
+│   ├── color-name
+│   ├── color-string
+│   ├── colord
+│   ├── commander
+│   ├── concat-map
+│   ├── cosmiconfig
+│   ├── cross-spawn
+│   ├── css-color-names
+│   ├── css-declaration-sorter
+│   ├── css-select
+│   ├── css-tree
+│   ├── css-unit-converter
+│   ├── css-what
+│   ├── cssesc
+│   ├── cssnano
+│   ├── cssnano-preset-default
+│   ├── cssnano-utils
+│   ├── csso
+│   ├── damerau-levenshtein
+│   ├── data-view-buffer
+│   ├── data-view-byte-length
+│   ├── data-view-byte-offset
+│   ├── debug
+│   ├── deep-is
+│   ├── define-data-property
+│   ├── define-properties
+│   ├── defined
+│   ├── detect-libc
+│   ├── detective
+│   ├── didyoumean
+│   ├── dlv
+│   ├── doctrine
+│   ├── dom-serializer
+│   ├── domelementtype
+│   ├── domhandler
+│   ├── domutils
+│   ├── dunder-proto
+│   ├── electron-to-chromium
+│   ├── emoji-regex
+│   ├── enhanced-resolve
+│   ├── entities
+│   ├── error-ex
+│   ├── es-abstract
+│   ├── es-define-property
+│   ├── es-errors
+│   ├── es-iterator-helpers
+│   ├── es-object-atoms
+│   ├── es-set-tostringtag
+│   ├── es-shim-unscopables
+│   ├── es-to-primitive
+│   ├── escalade
+│   ├── escape-string-regexp
+│   ├── eslint
+│   ├── eslint-config-next
+│   ├── eslint-import-resolver-node
+│   ├── eslint-import-resolver-typescript
+│   ├── eslint-module-utils
+│   ├── eslint-plugin-import
+│   ├── eslint-plugin-jsx-a11y
+│   ├── eslint-plugin-react
+│   ├── eslint-plugin-react-hooks
+│   ├── eslint-scope
+│   ├── eslint-visitor-keys
+│   ├── espree
+│   ├── esquery
+│   ├── esrecurse
+│   ├── estraverse
+│   ├── esutils
+│   ├── fast-deep-equal
+│   ├── fast-glob
+│   ├── fast-json-stable-stringify
+│   ├── fast-levenshtein
+│   ├── fastq
+│   ├── file-entry-cache
+│   ├── fill-range
+│   ├── find-up
+│   ├── flat-cache
+│   ├── flatted
+│   ├── for-each
+│   ├── fraction.js
+│   ├── framer-motion
+│   ├── fs-extra
+│   ├── fs.realpath
+│   ├── function-bind
+│   ├── function.prototype.name
+│   ├── functions-have-names
+│   ├── get-intrinsic
+│   ├── get-proto
+│   ├── get-symbol-description
+│   ├── get-tsconfig
+│   ├── glob
+│   ├── glob-parent
+│   ├── globals
+│   ├── globalthis
+│   ├── gopd
+│   ├── graceful-fs
+│   ├── graphemer
+│   ├── has-bigints
+│   ├── has-flag
+│   ├── has-property-descriptors
+│   ├── has-proto
+│   ├── has-symbols
+│   ├── has-tostringtag
+│   ├── hasown
+│   ├── hex-color-regex
+│   ├── hsl-regex
+│   ├── hsla-regex
+│   ├── html-tags
+│   ├── ignore
+│   ├── import-fresh
+│   ├── imurmurhash
+│   ├── inflight
+│   ├── inherits
+│   ├── internal-slot
+│   ├── is-array-buffer
+│   ├── is-arrayish
+│   ├── is-async-function
+│   ├── is-bigint
+│   ├── is-binary-path
+│   ├── is-boolean-object
+│   ├── is-bun-module
+│   ├── is-callable
+│   ├── is-color-stop
+│   ├── is-core-module
+│   ├── is-data-view
+│   ├── is-date-object
+│   ├── is-extglob
+│   ├── is-finalizationregistry
+│   ├── is-generator-function
+│   ├── is-glob
+│   ├── is-map
+│   ├── is-number
+│   ├── is-number-object
+│   ├── is-regex
+│   ├── is-set
+│   ├── is-shared-array-buffer
+│   ├── is-string
+│   ├── is-symbol
+│   ├── is-typed-array
+│   ├── is-weakmap
+│   ├── is-weakref
+│   ├── is-weakset
+│   ├── isarray
+│   ├── isexe
+│   ├── iterator.prototype
+│   ├── jiti
+│   ├── js-tokens
+│   ├── js-yaml
+│   ├── json-buffer
+│   ├── json-parse-even-better-errors
+│   ├── json-schema-traverse
+│   ├── json-stable-stringify-without-jsonify
+│   ├── json5
+│   ├── jsonfile
+│   ├── jsx-ast-utils
+│   ├── keyv
+│   ├── language-subtag-registry
+│   ├── language-tags
+│   ├── levn
+│   ├── lightningcss
+│   ├── lightningcss-linux-x64-gnu
+│   ├── lightningcss-linux-x64-musl
+│   ├── lilconfig
+│   ├── lines-and-columns
+│   ├── locate-path
+│   ├── lodash
+│   ├── lodash.memoize
+│   ├── lodash.merge
+│   ├── lodash.topath
+│   ├── lodash.uniq
+│   ├── loose-envify
+│   ├── math-intrinsics
+│   ├── mdn-data
+│   ├── merge2
+│   ├── micromatch
+│   ├── minimatch
+│   ├── minimist
+│   ├── modern-normalize
+│   ├── motion-dom
+│   ├── motion-utils
+│   ├── ms
+│   ├── nanoid
+│   ├── natural-compare
+│   ├── next
+│   ├── node-emoji
+│   ├── node-releases
+│   ├── normalize-path
+│   ├── normalize-range
+│   ├── nth-check
+│   ├── num2fraction
+│   ├── object-assign
+│   ├── object-hash
+│   ├── object-inspect
+│   ├── object-keys
+│   ├── object.assign
+│   ├── object.entries
+│   ├── object.fromentries
+│   ├── object.groupby
+│   ├── object.values
+│   ├── once
+│   ├── optionator
+│   ├── own-keys
+│   ├── p-limit
+│   ├── p-locate
+│   ├── parent-module
+│   ├── parse-json
+│   ├── path-exists
+│   ├── path-is-absolute
+│   ├── path-key
+│   ├── path-parse
+│   ├── path-type
+│   ├── picocolors
+│   ├── picomatch
+│   ├── possible-typed-array-names
+│   ├── postcss
+│   ├── postcss-calc
+│   ├── postcss-colormin
+│   ├── postcss-convert-values
+│   ├── postcss-discard-comments
+│   ├── postcss-discard-duplicates
+│   ├── postcss-discard-empty
+│   ├── postcss-discard-overridden
+│   ├── postcss-functions
+│   ├── postcss-js
+│   ├── postcss-load-config
+│   ├── postcss-merge-longhand
+│   ├── postcss-merge-rules
+│   ├── postcss-minify-font-values
+│   ├── postcss-minify-gradients
+│   ├── postcss-minify-params
+│   ├── postcss-minify-selectors
+│   ├── postcss-nested
+│   ├── postcss-normalize-charset
+│   ├── postcss-normalize-display-values
+│   ├── postcss-normalize-positions
+│   ├── postcss-normalize-repeat-style
+│   ├── postcss-normalize-string
+│   ├── postcss-normalize-timing-functions
+│   ├── postcss-normalize-unicode
+│   ├── postcss-normalize-url
+│   ├── postcss-normalize-whitespace
+│   ├── postcss-ordered-values
+│   ├── postcss-reduce-initial
+│   ├── postcss-reduce-transforms
+│   ├── postcss-selector-parser
+│   ├── postcss-svgo
+│   ├── postcss-unique-selectors
+│   ├── postcss-value-parser
+│   ├── prelude-ls
+│   ├── pretty-hrtime
+│   ├── prop-types
+│   ├── punycode
+│   ├── purgecss
+│   ├── queue-microtask
+│   ├── quick-lru
+│   ├── react
+│   ├── react-dom
+│   ├── react-is
+│   ├── readdirp
+│   ├── reduce-css-calc
+│   ├── reflect.getprototypeof
+│   ├── regexp.prototype.flags
+│   ├── resolve
+│   ├── resolve-from
+│   ├── resolve-pkg-maps
+│   ├── reusify
+│   ├── rgb-regex
+│   ├── rgba-regex
+│   ├── run-parallel
+│   ├── safe-array-concat
+│   ├── safe-push-apply
+│   ├── safe-regex-test
+│   ├── scheduler
+│   ├── semver
+│   ├── set-function-length
+│   ├── set-function-name
+│   ├── set-proto
+│   ├── sharp
+│   ├── shebang-command
+│   ├── shebang-regex
+│   ├── side-channel
+│   ├── side-channel-list
+│   ├── side-channel-map
+│   ├── side-channel-weakmap
+│   ├── simple-swizzle
+│   ├── source-map
+│   ├── source-map-js
+│   ├── stable-hash
+│   ├── streamsearch
+│   ├── string.prototype.includes
+│   ├── string.prototype.matchall
+│   ├── string.prototype.repeat
+│   ├── string.prototype.trim
+│   ├── string.prototype.trimend
+│   ├── string.prototype.trimstart
+│   ├── strip-bom
+│   ├── strip-json-comments
+│   ├── styled-jsx
+│   ├── stylehacks
+│   ├── supports-color
+│   ├── supports-preserve-symlinks-flag
+│   ├── svgo
+│   ├── tailwindcss
+│   ├── tapable
+│   ├── tinyglobby
+│   ├── tmp
+│   ├── to-regex-range
+│   ├── ts-api-utils
+│   ├── tsconfig-paths
+│   ├── tslib
+│   ├── type-check
+│   ├── typed-array-buffer
+│   ├── typed-array-byte-length
+│   ├── typed-array-byte-offset
+│   ├── typed-array-length
+│   ├── typescript
+│   ├── unbox-primitive
+│   ├── universalify
+│   ├── update-browserslist-db
+│   ├── uri-js
+│   ├── util-deprecate
+│   ├── which
+│   ├── which-boxed-primitive
+│   ├── which-builtin-type
+│   ├── which-collection
+│   ├── which-typed-array
+│   ├── word-wrap
+│   ├── wrappy
+│   ├── xtend
+│   ├── yaml
+│   └── yocto-queue
+├── package-lock.json
+├── package.json
+├── package.json.save
+├── postcss.config.mjs
+├── public
+│   ├── file.svg
+│   ├── globe.svg
+│   ├── next.svg
+│   ├── vercel.svg
+│   └── window.svg
+├── src
+│   ├── app
+│   ├── components
+│   └── styles
+├── tree.bat
+└── tree.txt
+
+399 directories, 18 files
+
+# tailwind.config.js
+cat > tailwind.config.js << 'EOF'
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    './src/app/**/*.{js,ts,jsx,tsx}',
+    './src/pages/**/*.{js,ts,jsx,tsx}',
+    './src/components/**/*.{js,ts,jsx,tsx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        primary: "#FFD700", // Gold
+        secondary: "#228B22", // Earthy Green
+        dark: "#121212", // Dark Mode Background
+        'secondary-dark': '#1a5e1a', // Darker shade for hover
+        black: "#000000", // Ensure bg-black is valid
+      },
+    },
+  },
+  plugins: [],
+}
+EOF
+
+# postcss.config.js
+cat > postcss.config.js << 'EOF'
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+EOF
+
+# Create a minimal globals.css
+echo "Creating minimal globals.css..."
+cat > src/styles/globals.css << 'EOF'
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Basic styles */
+body {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+button {
+  @apply px-4 py-2 rounded-md transition-all;
+}
+EOF
+
+# Create a minimal layout.js without font loading
+echo "Creating minimal layout.js..."
+cat > src/app/layout.js << 'EOF'
+import "@/styles/globals.css";
+
+export const metadata = {
+  title: "AeroVista",
+  description: "Innovating the skies with AI-powered solutions",
+};
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body className="bg-dark text-primary">
+        <main className="container mx-auto p-6">{children}</main>
+      </body>
+    </html>
+  );
+}
+EOF
+
+# Create a minimal page.js
+echo "Creating minimal page.js..."
+cat > src/app/page.js << 'EOF'
+export default function Home() {
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen py-12">
+      <h1 className="text-4xl font-bold mb-6 text-primary">AeroVista</h1>
+      <p className="text-xl mb-8">Innovating the skies with AI-powered solutions</p>
+      
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">
+        <div className="bg-secondary p-6 rounded-lg shadow-lg hover:shadow-xl transition-all">
+          <h2 className="text-2xl font-bold mb-3">Feature 1</h2>
+          <p>This is a test of Tailwind CSS px-4 and other utilities.</p>
+          <button className="mt-4 bg-primary text-dark px-4 py-2 rounded">Learn More</button>
+        </div>
+        
+        <div className="bg-secondary p-6 rounded-lg shadow-lg hover:shadow-xl transition-all">
+          <h2 className="text-2xl font-bold mb-3">Feature 2</h2>
+          <p>Testing if Tailwind CSS works in this minimal setup.</p>
+          <button className="mt-4 bg-primary text-dark px-4 py-2 rounded">Learn More</button>
+        </div>
+        
+        <div className="bg-secondary p-6 rounded-lg shadow-lg hover:shadow-xl transition-all">
+          <h2 className="text-2xl font-bold mb-3">Feature 3</h2>
+          <p>Simple setup without complex font loading or configurations.</p>
+          <button className="mt-4 bg-primary text-dark px-4 py-2 rounded">Learn More</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+EOF
+
+echo "Minimal project setup complete! Try running 'npm run dev'."
+echo "Your original files are backed up in ~/aerovista-backup/"
+echo "This setup uses Next.js 13.5.6 which has better compatibility with Tailwind CSS."

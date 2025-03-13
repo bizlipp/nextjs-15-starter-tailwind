@@ -1,0 +1,10 @@
+{
+    "extends": "next/core-web-vitals",
+    "ignorePatterns": [
+        "node_modules/**/*"
+    ],
+    "rules": {
+        "import/no-unresolved": "off",
+        "tailwindcss/no-custom-classname": "off"
+    }
+}

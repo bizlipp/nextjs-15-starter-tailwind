@@ -1,0 +1,880 @@
+/* GameCabinet.module.css */
+
+/* Cabinet with Base Container */
+.cabinetWithBase {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    z-index: 10;
+    /* Make sure it stays anchored in 3D space */
+    transform: translateZ(0);
+}
+
+.gameCabinetContainer {
+    width: 100%;
+    max-width: 480px;
+    border-radius: 10px 10px 0 0; /* Rounded corners only on top */
+    background: rgba(26, 10, 26, 0.8);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255, 0, 144, 0.3);
+    border-bottom: none; /* Remove bottom border as it connects to the base */
+    box-shadow: 0 0 30px rgba(106, 13, 173, 0.7);
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Cabinet Base */
+.cabinetBase {
+    width: 100%;
+    height: 60px;
+    max-width: 480px;
+    margin: -5px auto 0;
+    position: relative;
+    background: linear-gradient(to bottom, rgba(26, 10, 26, 0.9), rgba(20, 8, 20, 1));
+    border-radius: 0 0 15px 15px;
+    border: 1px solid rgba(255, 0, 144, 0.3);
+    border-top: none;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+
+    /* 3D effect for the base */
+    transform-style: preserve-3d;
+    transform: perspective(500px) rotateX(30deg);
+
+    /* Add LED strip along the base edge */
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 5px;
+        left: 10px;
+        right: 10px;
+        height: 2px;
+        background: linear-gradient(90deg, rgba(106, 13, 173, 0.6), rgba(255, 0, 144, 0.6), rgba(106, 13, 173, 0.6));
+        box-shadow: 0 0 10px rgba(255, 0, 144, 0.8);
+        z-index: 2;
+    }
+}
+
+/* Cabinet Legs */
+.cabinetLeg {
+    position: absolute;
+    bottom: -25px;
+    width: 40px;
+    height: 30px;
+    background: rgba(20, 8, 20, 1);
+    border: 1px solid rgba(255, 0, 144, 0.3);
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    transform-style: preserve-3d;
+
+    /* Metallic leg texture */
+    background-image: linear-gradient(
+        to bottom,
+        rgba(50, 50, 50, 0.5) 0%,
+        rgba(30, 30, 30, 0.5) 50%,
+        rgba(10, 10, 10, 0.5) 100%
+    );
+}
+
+/* Left Leg Position */
+.cabinetLeg:first-child {
+    left: 15%;
+    transform: perspective(500px) rotateY(-5deg);
+}
+
+/* Right Leg Position */
+.cabinetLeg:last-child {
+    right: 15%;
+    transform: perspective(500px) rotateY(5deg);
+}
+
+/* Add highlight to legs for 3D effect */
+.cabinetLeg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to bottom, rgba(255, 0, 144, 0.2), transparent);
+}
+
+/* Add foot pads to legs */
+.cabinetLeg::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 5px;
+    right: 5px;
+    height: 5px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Title Section */
+.titleSection {
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(135deg, #3fce3f, #6a0dad);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    box-shadow: 0 0 15px rgba(106, 13, 173, 0.7);
+}
+
+.titleSection.portalActive {
+    background: linear-gradient(135deg, #44cc44, #6a0dad);
+    box-shadow: 0 0 20px rgba(68, 204, 68, 0.6);
+}
+
+.titleAccent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #ff0090, transparent);
+}
+
+.cabinetTitle {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.6rem;
+    margin: 0;
+    color: white;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(255, 0, 144, 0.5);
+    letter-spacing: 2px;
+}
+
+/* Main Display Screen */
+.displayScreen {
+    width: 100%;
+    height: 250px;
+    background: #000;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    border: 1px solid rgba(255, 0, 144, 0.5);
+    box-shadow: 0 0 10px rgba(106, 13, 173, 0.7) inset;
+    position: relative;
+}
+
+/* Controls Panel */
+.controlsPanel {
+    width: 100%;
+    background: rgba(26, 10, 26, 0.9);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    overflow: visible;
+    border: 1px solid rgba(106, 13, 173, 0.5);
+    box-shadow: 0 0 15px rgba(255, 0, 144, 0.4);
+}
+
+/* Demo Controls */
+.demoControls {
+    width: 100%;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+/* Power Section */
+.powerSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Power Button */
+.powerButton {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: rgba(106, 13, 173, 0.9);
+    border: 2px solid #ff0090;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 0, 144, 0.5);
+}
+
+.powerButton:hover {
+    background: rgba(255, 0, 144, 0.9);
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 0, 144, 0.8);
+}
+
+.powerActive {
+    background: rgba(68, 204, 68, 0.8);
+    border-color: rgba(68, 204, 68, 1);
+    box-shadow: 0 0 15px rgba(68, 204, 68, 0.7);
+}
+
+/* Controls Row */
+.controlsRow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Demo Button */
+.demoButton {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: rgba(106, 13, 173, 0.9);
+    border: 2px solid #ff0090;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 10px rgba(255, 0, 144, 0.5);
+}
+
+.demoButton:hover:not(:disabled) {
+    background: rgba(255, 0, 144, 0.9);
+    transform: scale(1.1);
+}
+
+.demoButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.activeButton {
+    background: rgba(255, 0, 144, 0.9);
+    box-shadow: 0 0 15px rgba(255, 0, 144, 0.7);
+}
+
+/* Button Labels */
+.buttonLabel {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.7rem;
+    color: rgba(255, 0, 144, 0.9);
+    text-align: center;
+    margin-top: 5px;
+    text-shadow: 0 0 5px rgba(255, 0, 144, 0.5);
+    letter-spacing: 1px;
+}
+
+/* D-Pad Container */
+.dPadContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* D-Pad */
+.dPad {
+    position: relative;
+    width: 90px;
+    height: 90px;
+}
+
+.dPadCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background: rgba(26, 10, 26, 0.9);
+    border-radius: 50%;
+    border: 1px solid rgba(255, 0, 144, 0.3);
+}
+
+.dPadUp,
+.dPadRight,
+.dPadDown,
+.dPadLeft {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    background: rgba(106, 13, 173, 0.9);
+    border: 2px solid rgba(255, 0, 144, 0.7);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 8px rgba(255, 0, 144, 0.4);
+}
+
+.dPadUp:hover:not(:disabled),
+.dPadRight:hover:not(:disabled),
+.dPadDown:hover:not(:disabled),
+.dPadLeft:hover:not(:disabled) {
+    background: rgba(255, 0, 144, 0.9);
+    box-shadow: 0 0 12px rgba(255, 0, 144, 0.6);
+}
+
+.dPadUp:disabled,
+.dPadRight:disabled,
+.dPadDown:disabled,
+.dPadLeft:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.dPadUp {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px 5px 0 0;
+}
+
+.dPadRight {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    border-radius: 0 5px 5px 0;
+}
+
+.dPadDown {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 0 0 5px 5px;
+}
+
+.dPadLeft {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    border-radius: 5px 0 0 5px;
+}
+
+/* Action Buttons Container */
+.actionButtonsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Action Buttons */
+.actionButtons {
+    display: flex;
+    gap: 10px;
+}
+
+.actionButton {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.actionButton:hover:not(:disabled) {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.actionButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Progress Bar */
+.progressBar {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 0 10px;
+    align-items: center;
+}
+
+.progressItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.progressItem[data-status='completed'] {
+    color: #00ff00;
+}
+
+.progressItem[data-status='in-progress'] {
+    color: #ff0090;
+}
+
+.progressItem[data-status='upcoming'] {
+    color: #6a0dad;
+    opacity: 0.7;
+}
+
+.milestone {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Demo Screen */
+.demoScreen {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Boot Sequence */
+.bootSequence {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #44cc44;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.7rem;
+    background: #000;
+    padding: 20px;
+}
+
+.loadingBar {
+    width: 80%;
+    height: 6px;
+    background: rgba(68, 204, 68, 0.3);
+    border-radius: 3px;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.loadingBar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 30%;
+    background: #44cc44;
+    border-radius: 3px;
+    animation: loading 2s infinite ease-in-out;
+}
+
+@keyframes loading {
+    0% {
+        left: -30%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Demo Idle State */
+.demoIdle {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(106, 13, 173, 0.4), rgba(255, 0, 144, 0.4));
+}
+
+.gameTitle {
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    text-shadow: 0 0 5px rgba(255, 0, 144, 0.8);
+}
+
+.pressStart {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Demo Menu */
+.demoMenu {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.demoMenu h4 {
+    margin: 0 0 10px 0;
+    font-size: 1rem;
+    color: #ff0090;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.demoMenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.8rem;
+    width: 80%;
+}
+
+.demoMenu li {
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.demoMenu li:hover {
+    background: rgba(255, 0, 144, 0.3);
+}
+
+.menuItemSelected {
+    background: rgba(106, 13, 173, 0.7) !important;
+    color: white;
+    font-weight: bold;
+    position: relative;
+}
+
+.menuItemSelected::before {
+    content: '▶';
+    position: absolute;
+    left: -10px;
+    color: #ff0090;
+}
+
+/* Demo Running State */
+.demoRunning {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    padding: 15px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.demoRunning h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2rem;
+    color: #44cc44;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.demoRunning p {
+    margin: 2px 0 15px 0;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.gamePlaceholder {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(to top, rgba(106, 13, 173, 0.3), transparent);
+}
+
+.gameCharacter {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 40px;
+    background: #ff0090;
+    border-radius: 5px;
+    animation: bounce 1s infinite ease-in-out;
+}
+
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-15px);
+    }
+}
+
+/* Diorama */
+.diorama {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dioramaScene {
+    width: 80%;
+    height: 80%;
+    background: linear-gradient(135deg, rgba(106, 13, 173, 0.2), rgba(255, 0, 144, 0.2));
+    border-radius: 5px;
+    position: relative;
+}
+
+.infoButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(106, 13, 173, 0.7);
+    color: white;
+    border: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.infoButton:hover {
+    background: rgba(255, 0, 144, 0.8);
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 0, 144, 0.8);
+}
+
+.anvilIcon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.anvilSvg {
+    font-size: 24px;
+    filter: drop-shadow(0 0 3px rgba(255, 0, 144, 0.8));
+    transition: all 0.3s ease;
+}
+
+.anvilSvg:hover {
+    transform: scale(1.2);
+}
+
+/* Trailer */
+.trailerContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: black;
+}
+
+.closeTrailer {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 0, 144, 0.8);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.videoPlaceholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #ff0090;
+    font-size: 1.2rem;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 500px) {
+    .gameCabinetContainer {
+        max-width: 100%;
+        padding: 5px;
+    }
+
+    .demoControls {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .dPad {
+        width: 80px;
+        height: 80px;
+    }
+
+    .displayScreen {
+        height: 200px;
+    }
+}
+
+/* Settings Screen */
+.settingsScreen {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.settingsScreen h3 {
+    margin: 0 0 15px 0;
+    font-size: 1.2rem;
+    color: #6a0dad;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 5px rgba(106, 13, 173, 0.8);
+}
+
+.settingsContent {
+    width: 80%;
+    max-width: 300px;
+}
+
+.settingItem {
+    background: rgba(106, 13, 173, 0.2);
+    border: 1px solid rgba(106, 13, 173, 0.5);
+    border-radius: 5px;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.settingItem:hover {
+    background: rgba(106, 13, 173, 0.4);
+    border-color: rgba(255, 0, 144, 0.5);
+    transform: translateX(5px);
+}
+
+.settingItem span {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* High Scores Screen */
+.highScoresScreen {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.highScoresScreen h3 {
+    margin: 0 0 15px 0;
+    font-size: 1.2rem;
+    color: #ff0090;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 5px rgba(255, 0, 144, 0.8);
+}
+
+.scoreTable {
+    width: 80%;
+    max-width: 300px;
+}
+
+.scoreRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 0, 144, 0.3);
+}
+
+.scoreRank {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(106, 13, 173, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: white;
+}
+
+.scoreName {
+    flex: 1;
+    text-align: left;
+    padding-left: 10px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.scoreValue {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    color: #44cc44;
+    font-size: 0.9rem;
+}

@@ -1,0 +1,28 @@
+<H1>Folder Structure & Route Groups</H1>
+
+aerovista/
+├─ app/
+│  ├─ layout.tsx          # Root layout for entire site
+│  ├─ page.tsx            # Home page (index)
+│  ├─ (divisions)/        # Route groups for each division
+│  │  ├─ skyforge/
+│  │  │  ├─ page.tsx      # e.g., SkyForge home
+│  │  │  └─ layout.tsx    # Optional layout for that division
+│  │  ├─ lumina/
+│  │  ├─ nexus/
+│  │  ├─ horizon/
+│  │  ├─ vespera/
+│  │  ├─ summit/
+│  │  └─ echoverse/
+│  ├─ components/
+│  │  ├─ Header.tsx
+│  │  └─ Footer.tsx
+├─ public/
+├─ tailwind.config.js
+├─ package.json
+└─ ...
+
+
+layout.tsx: Wraps all pages, sets <html>, <body>, and global theming or components.
+page.tsx in root: The new “home page” (index route).
+(divisions)/.../page.tsx: Separate pages for each division, using respective accent colors.
